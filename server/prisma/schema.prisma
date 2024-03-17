@@ -65,3 +65,23 @@ model Product {
   orders      Order[]
   updatedAt   DateTime @updatedAt
 }
+
+model Channel {
+  avgVideoRevenue       Float
+  avgViewCount          Int
+  channelCategory       String
+  channelCreationDate   DateTime
+  createdAt             DateTime @default(now())
+  description           String
+  id                    String   @id @default(auto()) @map("_id") @db.ObjectId
+  isMonetizationEnabled Boolean
+  location              String?
+  playlistId            String
+  rpm                   Float
+  title                 String
+  totalViewCount        BigInt
+  updatedAt             DateTime @updatedAt
+  username              String   @unique
+  videoCount            Int
+  ytChannelId           String   @unique
+}
